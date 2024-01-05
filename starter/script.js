@@ -90,17 +90,45 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-
+  let password= prompt("What password length would you like?");
+  if (password >=8 && password<=128){
+    lowerCasedCharacters = confirm("Would you like lower case letters?")
+    upperCasedCharacters = confirm("Would you like upper case letters?")
+    numericCharacters = confirm("Would you like numeric characters?")
+    specialCharacters = confirm("Would you like special characters?")
+  }else{
+    alert("Password selection does not meet the criteria. Please try again!")
+  }
+  
 }
+// getPasswordOptions();
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
 
 }
 
-// Function to generate password with user input
-function generatePassword() {
 
+
+
+// Function to generate password with user input
+function generatePassword(hasLowerCasedCharacters, hasUpperCasedCharacters, hasNumericCharacters, hasSpecialCharacters) {
+  let alltypes = '';
+
+  if(hasLowerCasedCharacters){
+    alltypes += lowerCasedCharacters;
+  }
+  if(hasUpperCasedCharacters){
+    alltypes +=upperCasedCharacters
+  }
+  if(hasNumericCharacters){
+    alltypes +=numericCharacters
+  }
+  if(hasSpecialCharacters){
+    alltypes +=specialCharacters
+  }
+  getPasswordOptions();
 }
 
 // Get references to the #generate element
