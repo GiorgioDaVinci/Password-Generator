@@ -90,46 +90,61 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  let password= prompt("What password length would you like?");
-  if (password >=8 && password<=128){
-    lowerCasedCharacters = confirm("Would you like lower case letters?")
-    upperCasedCharacters = confirm("Would you like upper case letters?")
-    numericCharacters = confirm("Would you like numeric characters?")
-    specialCharacters = confirm("Would you like special characters?")
-  }else{
+  let passwordLength= prompt("What password length would you like?");
+  let answer = parseInt(passwordLength);
+
+  if (answer >=8 && answer<=128){
+    let uselowerCasedCharacters = confirm("Would you like lower case letters?")
+    let useupperCasedCharacters = confirm("Would you like upper case letters?")
+    let usenumericCharacters = confirm("Would you like numeric characters?")
+    let usespecialCharacters = confirm("Would you like special characters?")
+
+    generatePassword(answer, uselowerCasedCharacters, useupperCasedCharacters, usenumericCharacters, usespecialCharacters);
+  } else{
     alert("Password selection does not meet the criteria. Please try again!")
   }
   
 }
-// getPasswordOptions();
 
+
+
+
+
+
+// Function to generate password with user input
+function generatePassword(passwordLength,uselowerCasedCharacters, useupperCasedCharacters, usenumericCharacters, usespecialCharacters) {
+  let allChar = '';
+  if (useupperCasedCharacters){
+    allChar+= upperCasedCharacters.join('');
+  }
+  if (uselowerCasedCharacters){
+    allChar+= lowerCasedCharacters.join('');
+  }
+  if(usenumericCharacters){
+    allChar+= numericCharacters.join('');
+  }
+  if(usespecialCharacters){
+    allChar+= specialCharacters.join('');
+  }
+  let password = '';
+  for(let i = 0; i < passwordLength; i++){
+    let randomIndex = Math.floor(Math.random() * allChar.length);
+    password += allChar.charAt(randomIndex);
+    
+    
+  }
+  console.log(password);
+  
+
+
+  getPasswordOptions();
+}
 
 // Function for getting a random element from an array
 function getRandom(arr) {
 
 }
 
-
-
-
-// Function to generate password with user input
-function generatePassword(hasLowerCasedCharacters, hasUpperCasedCharacters, hasNumericCharacters, hasSpecialCharacters) {
-  let alltypes = '';
-
-  if(hasLowerCasedCharacters){
-    alltypes += lowerCasedCharacters;
-  }
-  if(hasUpperCasedCharacters){
-    alltypes +=upperCasedCharacters
-  }
-  if(hasNumericCharacters){
-    alltypes +=numericCharacters
-  }
-  if(hasSpecialCharacters){
-    alltypes +=specialCharacters
-  }
-  getPasswordOptions();
-}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
