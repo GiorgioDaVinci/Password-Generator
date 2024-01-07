@@ -103,6 +103,8 @@ function getPasswordOptions() {
     let usenumericCharacters = confirm("Would you like numeric characters?")
     let usespecialCharacters = confirm("Would you like special characters?")
 
+    // The generate password calls the values from the user inputs
+
     generatePassword(answer, uselowerCasedCharacters, useupperCasedCharacters, usenumericCharacters, usespecialCharacters);
   } else{
     alert("Password selection does not meet the criteria. Please try again!")
@@ -117,8 +119,12 @@ function getPasswordOptions() {
 
 // Function to generate password with user input
 function generatePassword(passwordLength,uselowerCasedCharacters, useupperCasedCharacters, usenumericCharacters, usespecialCharacters) {
+
+  // The allChar variable stores the the characters the user selects.
   let allChar = '';
   if (useupperCasedCharacters){
+    // if the user selects the upper case characters, it is stored in the allChar variable
+    // the .join ensures that the character types selected by the user are joined together
     allChar+= upperCasedCharacters.join('');
   }
   if (uselowerCasedCharacters){
@@ -130,24 +136,30 @@ function generatePassword(passwordLength,uselowerCasedCharacters, useupperCasedC
   if(usespecialCharacters){
     allChar+= specialCharacters.join('');
   }
+
+  //  the password variable starts off as an empty string
   let password = '';
+
+  // the for loop randomly selects values based on the different character values in the array
   for(let i = 0; i < passwordLength; i++){
     let randomIndex = Math.floor(Math.random() * allChar.length);
     password += allChar.charAt(randomIndex);
     
     
   }
+  // this logs the generated password to the console
+
+
   console.log(password);
   
 
+// the getPasswordOptions function is called so it initialises the process of generating the password
+  getPasswordOptions(); 
 
-  getPasswordOptions();
+  // The alert message prints the generated password
+  alert(password);
 }
 
-// Function for getting a random element from an array
-function getRandom(arr) {
-
-}
 
 
 // Get references to the #generate element
