@@ -90,9 +90,13 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  let passwordLength= prompt("What password length would you like?");
+  // This prompts the user asking them what password length they want
+  let passwordLength= prompt("What password length would you like?"); 
+  // The string returned is converted into an integer using the parseInt method
   let answer = parseInt(passwordLength);
 
+  // An if statement is initialised making sure the users can only input
+  // numbers between 8 and 128
   if (answer >=8 && answer<=128){
     let uselowerCasedCharacters = confirm("Would you like lower case letters?")
     let useupperCasedCharacters = confirm("Would you like upper case letters?")
