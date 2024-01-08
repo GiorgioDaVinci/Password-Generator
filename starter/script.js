@@ -124,7 +124,9 @@ function generatePassword(passwordLength,uselowerCasedCharacters, useupperCasedC
   let allChar = '';
   if (useupperCasedCharacters){
     // if the user selects the upper case characters, it is stored in the allChar variable
-    // the .join ensures that the character types selected by the user are joined together
+    // the .join ensures that the character types selected by the user are joined together.
+    // the '' passed in the join acts as a separator so there is no space between the
+    // the characters when they are joined together.
     allChar+= upperCasedCharacters.join('');
   }
   if (uselowerCasedCharacters){
