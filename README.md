@@ -8,6 +8,8 @@ Once the user makes their selection, the randomly generated password is displaye
 
 Doing this project has taught me the importance of for loops and conditional statements. Because that has enabled my logic to function correctly. Also, the math.random logic has enabled the characters in the array to be randomly selected.
 
+Here is the link to the deployed application: https://giorgiodavinci.github.io/Password-Generator/
+
 ## Usage
 The user clicks the Generate password button and a prompt message pops up.
 
