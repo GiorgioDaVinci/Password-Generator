@@ -156,7 +156,7 @@ function generatePassword(passwordLength,uselowerCasedCharacters, useupperCasedC
   
 
   // The alert message prints the generated password
-  alert(`Your generated password is ${password}.`);
+  alert(`Your generated password is ${password}`);
 }
 
 
