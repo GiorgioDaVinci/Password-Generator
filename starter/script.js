@@ -107,7 +107,7 @@ function getPasswordOptions() {
 
     generatePassword(answer, uselowerCasedCharacters, useupperCasedCharacters, usenumericCharacters, usespecialCharacters);
   } else{
-    alert("Password selection does not meet the criteria. Please try again!")
+    alert("Password length does not meet the criteria. Please try again!")
   }
   
 }
