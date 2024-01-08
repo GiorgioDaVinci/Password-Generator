@@ -149,8 +149,8 @@ function generatePassword(passwordLength,uselowerCasedCharacters, useupperCasedC
     
     
   }
+  
   // this logs the generated password to the console for debugging purposes
-
 
   console.log(password);
   
