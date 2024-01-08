@@ -120,7 +120,7 @@ function getPasswordOptions() {
 // Function to generate password with user input
 function generatePassword(passwordLength,uselowerCasedCharacters, useupperCasedCharacters, usenumericCharacters, usespecialCharacters) {
 
-  // The allChar variable stores the the characters the user selects.
+  // The allChar variable stores the the characters the user selects based on the confirm choices.
   let allChar = '';
   if (useupperCasedCharacters){
     // if the user selects the upper case characters, it is stored in the allChar variable
