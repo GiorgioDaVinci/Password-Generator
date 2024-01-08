@@ -147,17 +147,14 @@ function generatePassword(passwordLength,uselowerCasedCharacters, useupperCasedC
     
     
   }
-  // this logs the generated password to the console
+  // this logs the generated password to the console for debugging purposes
 
 
   console.log(password);
   
 
-// the getPasswordOptions function is called so it initialises the process of generating the password
-  getPasswordOptions(); 
-
   // The alert message prints the generated password
-  alert(password);
+  alert(`Your generated password is ${password}.`);
 }
 
 
@@ -167,10 +164,8 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
-
-  passwordText.value = password;
+  // the getPasswordOptions function is called so it initialises the process of generating the password
+  getPasswordOptions();
 }
 
 // Add event listener to generate button
